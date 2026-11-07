@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>كرة ساخنة في ماء بارد</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#fff}
+body{display:grid;place-items:center;font-family:"Markazi Text",Tahoma,serif;touch-action:manipulation}
+svg{display:block;width:min(100vw,1200px);height:min(100vh,900px);overflow:visible;user-select:none} #action{cursor:pointer} #action:hover rect{fill:#087b79} .metric{font-family:"Markazi Text",Tahoma,serif} .track{fill:#eef2f4} .panelLabel{font-size:20px;font-weight:700;fill:#18242c} .num{font-size:31px;font-weight:800} .quiet{fill:#586673;font-size:15px} .outline{fill:#fff;stroke:#d8e2e9;stroke-width:2.2} .indicatorText{font-family:"Markazi Text",Tahoma,serif;font-size:22px;font-weight:700}
+#ballGroup{filter:drop-shadow(0 0 19px rgba(243,46,15,.52))}
+.waterline{stroke:#55bfea;stroke-width:4;fill:none;stroke-linecap:round}
+.ripple{fill:none;stroke:#48afe0;stroke-width:3;opacity:0}
+.bubble{fill:#fff;stroke:#b5e9fa;stroke-width:1.5;opacity:0}
+@media(prefers-reduced-motion:reduce){svg{cursor:pointer}}
+</style>
+</head>
+<body>
+<svg id="scene" viewBox="0 0 900 690" preserveAspectRatio="xMidYMid meet" aria-label="كرة معدنية ساخنة تسقط في كأس من الماء البارد. اضغط لبدء الإسقاط ثم اضغط لإعادة التجربة." role="img">
+<defs>
+ <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#edfaff" stop-opacity=".60"/><stop offset=".22" stop-color="#fff" stop-opacity=".12"/><stop offset=".76" stop-color="#fff" stop-opacity=".05"/><stop offset="1" stop-color="#cce8f7" stop-opacity=".55"/></linearGradient>
+ <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#aeeaff" stop-opacity=".70"/><stop offset="1" stop-color="#50bce9" stop-opacity=".72"/></linearGradient>
+ <radialGradient id="redBall" cx=".33" cy=".25" r=".82"><stop stop-color="#ffe1a4"/><stop offset=".14" stop-color="#ff9a4b"/><stop offset=".40" stop-color="#f43b16"/><stop offset=".72" stop-color="#c91012"/><stop offset="1" stop-color="#740710"/></radialGradient>
+ <radialGradient id="coolBall" cx=".33" cy=".25" r=".82"><stop offset="0" stop-color="#d6dce1"/><stop offset=".23" stop-color="#aab3bc"/><stop offset=".58" stop-color="#687580"/><stop offset="1" stop-color="#343d48"/></radialGradient>
+ <radialGradient id="warmBloom"><stop offset="0" stop-color="#ffad53" stop-opacity=".66"/><stop offset=".47" stop-color="#ffc47f" stop-opacity=".32"/><stop offset="1" stop-color="#ffca84" stop-opacity="0"/></radialGradient>
+ <linearGradient id="warmingWater" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9edbdc" stop-opacity=".24"/><stop offset=".55" stop-color="#f6c285" stop-opacity=".38"/><stop offset="1" stop-color="#ffbd78" stop-opacity=".40"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#ff3d0e" stop-opacity=".31"/><stop offset="1" stop-color="#ff3d0e" stop-opacity="0"/></radialGradient>
+ <clipPath id="inside"><path d="M296 332 L316 572 Q320 606 359 606 L541 606 Q580 606 584 572 L604 332 Z"/></clipPath>
+</defs>
+<g id="intro" class="metric" text-anchor="middle">
+ <text x="450" y="43" font-size="27" font-weight="800" fill="#15232e">توقّعي: ماذا يحدث لدرجة حرارة الكرة والماء بعد إسقاط الكرة الساخنة؟</text>
+</g>
+<g id="action" tabindex="0" role="button" aria-label="إسقاط الكرة في الماء" class="metric" text-anchor="middle">
+ <rect x="356" y="58" width="188" height="53" rx="18" fill="#0a9691"/>
+ <text id="actionLabel" x="450" y="92" font-size="24" font-weight="800" fill="white">أسقطي الكرة</text>
+</g>
+<g class="metric" text-anchor="middle">
+ <rect class="outline" x="675" y="145" width="203" height="414" rx="19"/>
+ <rect x="690" y="157" width="173" height="42" rx="11" fill="#eff6fa"/>
+ <text x="776" y="187" font-size="27" font-weight="700" fill="#263847">قبل الإسقاط</text>
+ <rect x="691" y="218" width="171" height="133" rx="15" fill="#fff7f5" stroke="#f3bdb2" stroke-width="2"/>
+ <text x="776" y="252" font-size="24" fill="#952e26" font-weight="700">الكرة الساخنة</text>
+ <text x="776" y="315" font-size="49" fill="#c52c1c" font-weight="700">80°C</text>
+ <rect x="691" y="367" width="171" height="133" rx="15" fill="#f2faff" stroke="#a7d9ef" stroke-width="2"/>
+ <text x="776" y="400" font-size="24" fill="#11749e" font-weight="700">الماء البارد</text>
+ <text x="776" y="463" font-size="49" fill="#157da9" font-weight="700">20°C</text>
+ <text x="776" y="535" font-size="21" fill="#566a77">درجات الحرارة الابتدائية</text>
+</g>
+<g class="metric" text-anchor="middle">
+ <rect class="outline" x="20" y="145" width="254" height="449" rx="20"/>
+ <rect x="36" y="157" width="222" height="43" rx="11" fill="#eff6fa"/>
+ <text x="147" y="188" font-size="27" font-weight="700" fill="#263847">أثناء التجربة</text>
+ <rect x="35" y="215" width="108" height="68" rx="12" fill="#fff5f3" stroke="#eab3aa" stroke-width="1.8"/>
+ <rect x="151" y="215" width="108" height="68" rx="12" fill="#f1faff" stroke="#a9d7ed" stroke-width="1.8"/>
+ <text x="89" y="239" font-size="22" font-weight="700" fill="#a02d27">الكرة</text>
+ <text x="205" y="239" font-size="22" font-weight="700" fill="#176d94">الماء</text>
+ <text id="ballLive" x="89" y="271" font-size="33" font-weight="700" fill="#c73524">80°C</text>
+ <text id="waterLive" x="205" y="271" font-size="33" font-weight="700" fill="#177eaf">20°C</text>
+ <rect x="74" y="308" width="30" height="216" rx="14" fill="#edf0f3" stroke="#aebdc7" stroke-width="2"/>
+ <rect x="190" y="308" width="30" height="216" rx="14" fill="#edf0f3" stroke="#aebdc7" stroke-width="2"/>
+ <rect id="ballFill" x="79" y="313" width="20" height="206" rx="9" fill="#e64830"/>
+ <rect id="waterFill" x="195" y="467.5" width="20" height="51.5" rx="9" fill="#239acb"/>
+ <g stroke="#687b85" stroke-width="1.4">
+   <path d="M105 313 h10 M105 364.5 h8 M105 416 h10 M105 467.5 h8 M105 519 h10"/>
+   <path d="M221 313 h10 M221 364.5 h8 M221 416 h10 M221 467.5 h8 M221 519 h10"/>
+ </g>
+ <g fill="#4c626f" font-size="17" font-weight="700" text-anchor="start">
+   <text x="115" y="319">80</text><text x="115" y="370">60</text><text x="115" y="422">40</text><text x="115" y="474">20</text><text x="115" y="525">0</text>
+   <text x="231" y="319">80</text><text x="231" y="370">60</text><text x="231" y="422">40</text><text x="231" y="474">20</text><text x="231" y="525">0</text>
+ </g>
+ <text id="ballTrend" x="88" y="555" font-size="21" font-weight="700" fill="#b53427">ثابتة</text>
+ <text id="waterTrend" x="204" y="555" font-size="21" font-weight="700" fill="#197b9e">ثابتة</text>
+ <text id="balanceLabel" x="147" y="584" font-size="21" font-weight="700" fill="#08857d"></text>
+</g>
+<ellipse cx="450" cy="618" rx="178" ry="14" fill="#a4bac8" opacity=".10"/>
+<path d="M287 326 L309 574 Q313 615 360 615 L540 615 Q587 615 591 574 L613 326" fill="url(#glass)" stroke="#a3c6da" stroke-width="5" stroke-linecap="round"/>
+<g clip-path="url(#inside)">
+ <path id="water" d="M299 416 Q450 410 601 416 L601 615 L299 615 Z" fill="url(#waterGrad)"/>
+ <path id="warmWater" d="M299 416 Q450 410 601 416 L601 615 L299 615 Z" fill="url(#warmingWater)" opacity="0"/>
+ <g id="thermalHalo" opacity="0"><ellipse cx="450" cy="540" rx="122" ry="101" fill="url(#warmBloom)"/></g>
+ <g id="currents" fill="none" stroke-linecap="round" opacity="0">
+   <path id="c1" d="M410 565 C370 526 399 487 370 457" stroke="#e99549" stroke-width="6" opacity=".52"/>
+   <path id="c2" d="M475 566 C524 530 489 488 524 450" stroke="#f7b063" stroke-width="7" opacity=".58"/>
+   <path id="c3" d="M446 573 C424 528 469 495 446 454" stroke="#ffcf84" stroke-width="5" opacity=".65"/>
+ </g>
+ <g id="submergedBall"></g>
+ <path id="surface" d="M300 416 Q450 410 600 416" class="waterline"/>
+ <ellipse class="ripple" id="r1" cx="450" cy="416" rx="8" ry="3"/>
+ <ellipse class="ripple" id="r2" cx="450" cy="416" rx="8" ry="3"/>
+ <circle class="bubble" id="b1" cx="423" cy="470" r="7"/>
+ <circle class="bubble" id="b2" cx="478" cy="488" r="5"/>
+ <circle class="bubble" id="b3" cx="450" cy="516" r="4"/>
+ <circle class="bubble" id="b4" cx="405" cy="544" r="3"/>
+ <circle class="bubble" id="b5" cx="488" cy="540" r="3.5"/>
+ <circle class="bubble" id="b6" cx="463" cy="550" r="2.5"/>
+ </g>
+<path d="M287 326 L309 574 Q313 615 360 615 L540 615 Q587 615 591 574 L613 326" fill="none" stroke="#a6cadc" stroke-width="5" opacity=".78"/>
+<path d="M315 343 L329 567" fill="none" stroke="#fff" stroke-width="10" opacity=".64" stroke-linecap="round"/>
+<path d="M585 346 L572 555" fill="none" stroke="#fff" stroke-width="6" opacity=".46" stroke-linecap="round"/>
+<ellipse cx="450" cy="326" rx="164" ry="18" fill="#fff" fill-opacity=".12" stroke="#a8cadd" stroke-width="5"/>
+<g id="ballGroup" transform="translate(450 170)">
+ <circle id="heatGlow" r="62" fill="url(#glow)" transform="scale(1.55)"/>
+ <circle r="55" fill="url(#coolBall)" stroke="#4a515b" stroke-width="1.6"/>
+ <circle id="redSkin" r="55" fill="url(#redBall)" stroke="#ae190e" stroke-width="1.6"/>
+ <ellipse id="ballShine" cx="-18" cy="-22" rx="18" ry="12" fill="#fff4ce" opacity=".46" transform="rotate(-30 -18 -22)"/>
+</g>
+</svg>
+<script>
+(()=>{
+const svg=document.getElementById('scene'),ball=document.getElementById('ballGroup'),inside=document.getElementById('submergedBall'),r1=document.getElementById('r1'),r2=document.getElementById('r2'),surface=document.getElementById('surface');
+const bubbles=[document.getElementById('b1'),document.getElementById('b2'),document.getElementById('b3'),document.getElementById('b4'),document.getElementById('b5'),document.getElementById('b6')];
+const warmWater=document.getElementById('warmWater'),halo=document.getElementById('thermalHalo'),currents=document.getElementById('currents');
+const streaks=['c1','c2','c3'].map(id=>document.getElementById(id));
+const $=id=>document.getElementById(id);
+function updateTemps(p){
+ const f=1-Math.pow(1-p,3),hot=80-50*f,cold=20+10*f;
+ $('ballLive').textContent=hot.toFixed(1)+'°C';
+ $('waterLive').textContent=cold.toFixed(1)+'°C';
+ const range=206, ballH=range*hot/80, waterH=range*cold/80;
+ $('ballFill').setAttribute('y',String(519-ballH));
+ $('ballFill').setAttribute('height',String(ballH));
+ $('waterFill').setAttribute('y',String(519-waterH));
+ $('waterFill').setAttribute('height',String(waterH));
+ $('ballTrend').textContent=p===0?'ثابتة':p>=1?'استقرت':'↓ تنخفض';
+ $('waterTrend').textContent=p===0?'ثابتة':p>=1?'استقرت':'↑ ترتفع';
+ $('balanceLabel').textContent=p>=1?'تحقّق الاتزان الحراري':'';
+}
+let mode='ready',start=0,raf=0;
+const redSkin=document.getElementById('redSkin'),heatGlow=document.getElementById('heatGlow'),ballShine=document.getElementById('ballShine');
+function cool(t){const v=clamp(t,0,1);redSkin.style.opacity=String(1-v);heatGlow.style.opacity=String(Math.pow(1-v,2));ballShine.style.opacity=String(.46-.27*v);}
+const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+const ease=t=>1-Math.pow(1-t,3);
+function reset(){cancelAnimationFrame(raf);mode='ready';cool(0);updateTemps(0);$('actionLabel').textContent='أسقطي الكرة';ball.setAttribute('transform','translate(450 170)');svg.appendChild(ball);ball.style.opacity='1';ball.style.filter='';document.getElementById('water').setAttribute('d','M299 416 Q450 410 601 416 L601 615 L299 615 Z');surface.setAttribute('d','M300 416 Q450 410 600 416');for(const el of [r1,r2,...bubbles])el.style.opacity='0';warmWater.style.opacity='0';halo.style.opacity='0';currents.style.opacity='0';}
+function frame(time){let s=(time-start)/1000;let y;
+if(s<.72){y=170+Math.min(1,s/.72)**2*176;}
+else if(s<1.22){let t=(s-.72)/.5;y=346+ease(t)*170;}
+else{let t=clamp((s-1.22)/1.6,0,1);y=516+ease(t)*28;}
+ball.setAttribute('transform',`translate(450 ${y.toFixed(2)})`);
+const coolingProgress=clamp((s-1.08)/5.5,0,1);cool(coolingProgress*coolingProgress*(3-2*coolingProgress));updateTemps(coolingProgress);
+const warming=clamp((s-1.02)/5.1,0,1);
+warmWater.style.opacity=String(warming*.84);
+halo.style.opacity=String(Math.sin(Math.PI*clamp(warming*.83,0,1))*.8);
+const plume=clamp((s-1.18)/1.2,0,1);
+currents.style.opacity=String(plume*(1-.25*warming));
+for(let i=0;i<streaks.length;i++){
+  const wobble=Math.sin(s*2.2+i*2)*12;
+  streaks[i].setAttribute('transform',`translate(${wobble.toFixed(1)} ${((s*22+i*18)%42-21).toFixed(1)})`);
+  streaks[i].style.opacity=String(.18+.34*Math.abs(Math.sin(s*1.5+i)));
+}
+if(s>.84 && ball.parentNode!==inside){inside.appendChild(ball);ball.style.filter='none';}
+const splash=clamp((s-.9)/.36,0,1);
+const decay=clamp((s-1.15)/2,0,1);
+if(s>.86){const a=Math.sin((s-.86)*15)*13*Math.exp(-(s-.86)*1.45);surface.setAttribute('d',`M300 416 Q370 ${412+a*.3} 410 ${416-a*.5} Q450 ${410+a} 490 ${416-a*.5} Q550 ${412+a*.3} 600 416`);
+for(const [i,r] of [r1,r2].entries()){const t=clamp((s-.88-i*.25)/1.35,0,1);r.setAttribute('rx',String(8+t*115));r.setAttribute('ry',String(2+t*13));r.style.opacity=String(Math.sin(Math.PI*t)*.72);}
+for(const [i,b] of bubbles.entries()){
+  const life=2.6+i*.12;
+  const t=((Math.max(0,s-1.12-i*.34))%life)/life;
+  const active=s>1.12+i*.34;
+  const x=450+Math.sin(i*2.4)*32+Math.sin(t*5+i)*8;
+  b.setAttribute('cx',x.toFixed(1));
+  b.setAttribute('cy',String(550-t*112));
+  b.style.opacity=String(active?Math.sin(Math.PI*t)*.48*(1-.24*warming):0);
+}}
+if(s<7.2){raf=requestAnimationFrame(frame);}else{mode='done';$('actionLabel').textContent='إعادة التجربة';updateTemps(1);surface.setAttribute('d','M300 416 Q450 410 600 416');for(const r of [r1,r2,...bubbles])r.style.opacity='0';}
+}
+function play(){if(mode==='falling')return;reset();mode='falling';$('actionLabel').textContent='جاري الإسقاط…';start=performance.now();raf=requestAnimationFrame(frame)}
+$('action').addEventListener('click',play);$('action').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();play();}});reset();
+})();
+</script>
+</body></html>
